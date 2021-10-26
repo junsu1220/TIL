@@ -24,6 +24,10 @@
 * URL(Uniform Resource Locators)은 개발자가 아니더라도 이미 우리에게 익숙한 용어입니다. 
 서버에 자원을 요청하기 위해 입력하는 영문 주소죠. 
 아무래도 숫자로 되어 있는 IP 주소보다는 훨씬 기억하기 쉽기 때문에 사용하는 것 같습니다.
+
+![](../assets/http_7.png)
+
+
 * HTTP 가 전체 인터넷 프로토콜에서 위치하는 곳은 응용계층입니다.
   * 응용 계층 (DNS, FTP, HTTP)
   * 전송 계층 (TCP,UDP,SCTP)
@@ -35,6 +39,11 @@
 1. 클라이언트(사용자)가 서버에 HTTP Request (요청)을 한다.
 2. 서버가 사용자의 요청을 받고 HTTP Response (응답)을 한다.
 ```
+![](../assets/http_1.png)
+
+![](../assets/http_6.png)
+
+
 * 클라이언트란 요청을 보내는 쪽을 의미하며 일반적으로 웹 관점에서는 브라우저를 의미합니다.
 * 서버란 요청을 받는 쪽을 의미하며 일반적으로 데이터를 보내주는 원격지의 컴퓨터를 의미합니다.
 
@@ -48,15 +57,23 @@ CRLF
 [ message-body ]
 ```
 
+![](../assets/http_9.png)
+
+
 1.  Request-Line
   
 Request-Line, URL정보, 요청방식(Method), HTTP버전정보제공 의 규칙입니다.
 아래 그림에서는 Request URL, Request Method 를 나타내고 있습니다.
 
+![](../assets/http_2.png)
+
 2. *(( general-header | request-header | entity-header ) CRLF)
 
 헤더정보 , 헤더에는 요청하는 클라이언트 PC, 브라우저정보, 사용자언어환경, 쿠키 등의 다양한 클라이언트 환경에 대한 정보를 가지고 있다.
 때문에 헤더영역에 존재하는 데이터는 보안에 취약합니다.
+
+![](../assets/http_3.png)
+
 
 3. CRLF
   
@@ -77,13 +94,22 @@ CRLF
 [ message-body ]
 ```
 
+![](../assets/http_10.png)
+
+
 1. Status-Line
 
 응답 상태정보 표시 라인, HTTP버전정보 와 세자리 숫자값(200) 과 상태코드 값을 통해 응답결과 및 상태정보를 나타냅니다.
 
+![](../assets/http_4.png)
+
+
 2. 응답 헤더정보 제공
 
 헤더정보, 각종 서버 및 웹사이트 관련 환경정보를 제공한다.
+
+![](../assets/http_5.png)
+
 
 3. [ message-body ]
 
@@ -164,6 +190,7 @@ HTTP 상태 코드(HTTP Status Code)는 서버에서 설정해주는 응답(Resp
 
 ## 다시 살펴보는 HTTP 요청과 응답
 
+![](../assets/http_8.png)
 
 
 
