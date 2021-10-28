@@ -122,6 +122,7 @@ io 도메인을 쓰면 기존 com, net이 점유하고 있던 도메인들을 �
 개별국가 NIC이 관리하고 주로 회사들이 이용해서 비싸다고 합니다...
 
 참고:
+
 https://velog.io/@doomchit_3/Internet-DNS-%EC%9E%91%EB%8F%99%EC%9B%90%EB%A6%AC-IMBETPY
 
 https://velog.io/@goban/DNS%EC%99%80-%EC%9E%91%EB%8F%99%EC%9B%90%EB%A6%AC
