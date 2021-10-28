@@ -123,7 +123,11 @@ io 도메인을 쓰면 기존 com, net이 점유하고 있던 도메인들을 �
 
 참고:
 https://velog.io/@doomchit_3/Internet-DNS-%EC%9E%91%EB%8F%99%EC%9B%90%EB%A6%AC-IMBETPY
+
 https://velog.io/@goban/DNS%EC%99%80-%EC%9E%91%EB%8F%99%EC%9B%90%EB%A6%AC
+
 https://ja-gamma.tistory.com/entry/DNS%EA%B0%9C%EB%85%90%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC
+
 https://ijbgo.tistory.com/27
+
 https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=sharp428&logNo=220633341869
