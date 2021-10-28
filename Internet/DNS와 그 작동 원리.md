@@ -9,6 +9,9 @@
 - 사용자가 입력한 도메인 주소 = 문자로 된 우리집 주소
 - IP 주소 = 집배원 아저씨가 알아볼 수 있도록 우리집 주소를 숫자로 된 우편 주소로 나타낸 것
 
+![](../assets/DNS_2.png)
+![](../assets/DNS_3.png)
+
 ## DNS를 사용하는 이유
 - 길고 복잡한 IP주소를 외울수가 없기 때문입니다.
 
@@ -38,6 +41,9 @@
   - DNS클라이언트의 요청을 네임 서버로 전달하고 네임 서버로부터 도메인 이름과 IP주소를 받아 클라이언트에게 제공하는 기능을 수행
 
 ## DNS 기본 동작 설명
+![](../assets/DNS_5.gif)
+![](../assets/DNS_1.gif)
+
 - 웹 브라우저에 www.naver.com 을 입력합니다. 그러면 PC는 미리 설정되어 있는 DNS(단말에 설정되어 있는 이 DNS를 Local DNS라 부릅니다, 
 위에서는 203.248.252.2)에게 "www.naver.com 이라는 hostname" 에 대한 IP주소를 요청합니다.
 - Local DNS 에는 "www.naver.com의 IP주소" 가 있을 수도, 없을 수도 있습니다. 만약 있다면 Local DNS가 바로 PC에 IP주소를 주고 끝나지만 
@@ -107,6 +113,8 @@
 ***
 
 ## TLD의 구조
+![](../assets/DNS_4.jpg)
+
 - 최상위 ICANN 아래에 REGISTRY, NIC이 있고 REGISTRY 아래에 우리가 흔이 보는 gTLD 
 그리고 new gTLD가 있고 NIC아래에는 공공사이트에서 쓰는 ccTLD 도메인 주소가 있습니다.
 - velog.io 와 github.io (깃허브 블로그)는 영국령 인도양 지역의 인터넷 국가 코드 최상위 도메인입니다. 
