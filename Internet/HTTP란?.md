@@ -192,7 +192,7 @@ HTTP 상태 코드(HTTP Status Code)는 서버에서 설정해주는 응답(Resp
 
 ![](../assets/http_8.png)
 
-출처 : 
+ : 
 https://velog.io/@doomchit_3/Internet-HTTP-%EA%B0%9C%EB%85%90%EC%B0%A8%EB%A0%B7-IMBETPY
 https://joshua1988.github.io/web-development/http-part1/#%EB%A7%88%EB%AC%B4%EB%A6%AC
 https://developer.mozilla.org/ko/docs/Web/HTTP/Overview
