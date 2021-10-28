@@ -120,3 +120,10 @@
 - velog.io 와 github.io (깃허브 블로그)는 영국령 인도양 지역의 인터넷 국가 코드 최상위 도메인입니다. 
 io 도메인을 쓰면 기존 com, net이 점유하고 있던 도메인들을 벗어나 새롭게 도메인을 확보할 수 있다고 합니다. 
 개별국가 NIC이 관리하고 주로 회사들이 이용해서 비싸다고 합니다...
+
+참고:
+https://velog.io/@doomchit_3/Internet-DNS-%EC%9E%91%EB%8F%99%EC%9B%90%EB%A6%AC-IMBETPY
+https://velog.io/@goban/DNS%EC%99%80-%EC%9E%91%EB%8F%99%EC%9B%90%EB%A6%AC
+https://ja-gamma.tistory.com/entry/DNS%EA%B0%9C%EB%85%90%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC
+https://ijbgo.tistory.com/27
+https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=sharp428&logNo=220633341869
