@@ -1,0 +1,5 @@
+- VSCODE를 쓸 것이다.
+- javascript를 배운다면 프론트엔드 벡엔드 다 할 수 있다.
+- javascript는 기본적으로 웹 브라우저에 깔려있고 이는 폭발적인 장점이다.
+- HTML, CSS, Javascript 를 이용해서 프론트엔드를 하자
+- 설치할 수 없거나 제한적인 환경일 경우 replit.com 을 사용하자
