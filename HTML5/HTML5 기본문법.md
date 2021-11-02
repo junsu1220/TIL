@@ -115,8 +115,8 @@ IDE(Integrated Development Environment)를 사용하는 것이 일반적이다. 
 
 ## 4. HTML History
 
-| Year | Version | 
-|---|:---:|
+| *Year* | *Version* | 
+|:---|:---|
 |1989.06	|팀 버너스리가 월드와이드웹(WWW)의 하이퍼텍스트 시스템, URL, HTTP, HTML 설계/개발.|
 |1993.06	|HTML 1.0|
 |1995.11	|HTML 2.0|
@@ -135,6 +135,7 @@ IDE(Integrated Development Environment)를 사용하는 것이 일반적이다. 
 
 
 참고 : 
+
 https://poiemaweb.com/html5-syntax
 
 https://html.spec.whatwg.org/multipage/
