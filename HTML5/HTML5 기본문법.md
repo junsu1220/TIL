@@ -50,6 +50,7 @@ IDE(Integrated Development Environment)를 사용하는 것이 일반적이다. 
 - HTML 요소는 시작 태그(start tag)와 종료 태그(end tag) 그리고 태그 사이에 위치한 content로 구성된다.
 
 ![](../assets/html1_3.png)
+![](../assets/html1_6.png)
 
 
 - HTML document는 요소(Element)들의 집합으로 이루어진다.
