@@ -1,6 +1,9 @@
 ## 1. HTML5
 - HTML(Hypertext markup language)은 웹페이지를 기술하기 위한 마크업 언어이다. 
 조금 더 자세히 말하면 웹페이지의 내용(content)와 구조(structure)을 담당하는 언어로써 HTML 태그를 통해 정보를 구조화하는 것이다. 
+
+![](../assets/html1_1.png)
+
 - HTML5는 2014년 10월 28일 확정된 차세대 웹 표준으로 아래와 같은 기능들이 추가되었다.
 
 > - 멀티미디어 - 플래시와 같은 플러그인의 도움없이 비디오 및 오디오 기능을 자체적으로 지원한다.
@@ -18,7 +21,7 @@
 - <head>와 </head>사이에는 document title, 외부 파일의 참조, 메타데이터의 설정 등이 위치하며 이 정보들은 브라우저에 표시되지 않는다.
 - 웹브라우저에 출력되는 모든 요소는 <body>와 </body>사이에 위치한다.
 
-```
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -30,6 +33,9 @@
     <p>안녕하세요! HTML5</p>
   <body>
 </html>
+```
+
+![](../assets/html1_2.PNG)
 
 - HTML document는 .html 확장자를 갖는 순수한 텍스트 파일이다. 따라서 메모장 등으로도 편집할 수 있으나 다양한 편의 기능을 제공하는 editor 또는 
 IDE(Integrated Development Environment)를 사용하는 것이 일반적이다. 대표적인 editor 또는 IDE는 아래와 같다.
@@ -42,6 +48,10 @@ IDE(Integrated Development Environment)를 사용하는 것이 일반적이다. 
 ## 3. HTML5의 기본 문법
 ### 3.1 요소(element)
 - HTML 요소는 시작 태그(start tag)와 종료 태그(end tag) 그리고 태그 사이에 위치한 content로 구성된다.
+
+![](../assets/html1_3.png)
+
+
 - HTML document는 요소(Element)들의 집합으로 이루어진다.
 - 태그는 대소문자를 구별하지 않으나 W3G: World Wide Web Consortium에서는 HTML4의 경우 소문자를 추천하고 있으므로 HTML5에서도 소문자를 사용하는 것이 일반적이다.
 
@@ -60,6 +70,8 @@ IDE(Integrated Development Environment)를 사용하는 것이 일반적이다. 
   </body>
 </html>
 ```
+
+![](../assets/html1_4.PNG)
 
 - html 요소는 웹페이지를 구성하는 모든 요소들을 포함한다. 위 예제를 보면 html요소는 body요소를 포함하며 body 요소는 h1, p요소를 포함한다. 
 이 중첩 관계(부자 관계)로 웹페이지의 구조(structure)를 표현한다.
@@ -80,8 +92,12 @@ IDE(Integrated Development Environment)를 사용하는 것이 일반적이다. 
 ### 3.2 어트리뷰트(Attribute)
 - 어트리뷰트(Attribute 속성)이란 요소의 성질, 특징을 정의하는 명세이다. 요소는 어트리뷰트를 가질 수 있으며 어트리뷰트는 요소에 추가적 정보(예를 들어 이미지파일의 경로, 크기 등)
 를 제공한다. 어트리뷰트는 시작태그에 위치해야 하며 이름과 값의 쌍을 이룬다.(e.g. name="value")
-`<img src="html.jpg" width="104" height="142">
 
+![](../assets/html1_5.png)
+
+```html
+<img src="html.jpg" width="104" height="142">
+```
 
 - 위의 예에서 어트리뷰트 src는 이미지 파일의 경로와 파일명, width는 이미지의 너비, height는 이미지의 높이 정보를 브라우저에 알려준다. 이 정보들을 사용하여 브라우저는 img 요소를 화면에
 출력한다.
@@ -92,6 +108,10 @@ IDE(Integrated Development Environment)를 사용하는 것이 일반적이다. 
 
 ### 3.3 주석(comments)
 주석(comment)는 주로 개발자에게 코드를 설명하기 위해 사용되며 브라우저는 주석을 화면에 표시하지 않는다.
+```html
+<!--주석은 화면에 표시되지 않는다.-->
+<p>Lorem ipsum dolor sit amet</p>
+```
 
 ## 4. HTML History
 
