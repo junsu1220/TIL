@@ -115,6 +115,25 @@ IDE(Integrated Development Environment)를 사용하는 것이 일반적이다. 
 
 ## 4. HTML History
 
+| Year | Version | 
+|---|:---:|
+|1989.06	|팀 버너스리가 월드와이드웹(WWW)의 하이퍼텍스트 시스템, URL, HTTP, HTML 설계/개발.|
+|1993.06	|HTML 1.0|
+|1995.11	|HTML 2.0|
+|1996	|CSS 1 + JavaScript|
+|1997.01|	HTML 3.2|
+|1997.12|	HTML 4.0|
+|1998|	CSS 2|
+|1998.10|	DOM Level 1|
+|1999.12|	HTML 4.01|
+|2000.01|	XHTML 1.0|
+|2000.11|	DOM Level 2 Core|
+|2001.05|	XHTML 1.1|
+|2007.11|	HTML5 디자인 원칙 초안|
+|2010.01|	HTML5 초안 공개(FPWD. First Publication Working Draft)|
+|2014.10|	HTML5 최종 표준안 공개(Rec. Recommendation)|
+
+
 참고 : 
 https://poiemaweb.com/html5-syntax
 
