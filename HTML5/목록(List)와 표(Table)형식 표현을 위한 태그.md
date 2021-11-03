@@ -14,6 +14,9 @@
 </html>
 ```
 
+![](../assets/html6_1.PNG)
+
+
 ### 1.2 순서있는 목록 (Ordered List)
 ```html
 <!DOCTYPE html>
@@ -28,6 +31,8 @@
   </body>
 </html>
 ```
+
+![](../assets/html6_2.PNG)
 
 - type 어트리뷰트를 사용하여 순서를 나타내는 문자를 지정할 수 있다
 
@@ -47,6 +52,8 @@
 </ol>
 ```
 
+![](../assets/html6_3.PNG)
+
 - start 어트리뷰트로 리스트의 시작값을 지정할 수 있다.
 ```html
 <ol start="3">
@@ -55,6 +62,8 @@
   <li>Milk</li>
 </ol>
 ```
+
+![](../assets/html6_4.PNG)
 
 - reversed 어트리뷰트를 지정하면 리스트의 순서값을 역으로 표현한다.
 
@@ -65,6 +74,8 @@
   <li>Milk</li>
 </ol>
 ```
+
+![](../assets/html6_5.PNG)
 
 ### 1.3 중첩 목록
 ```html
@@ -85,6 +96,9 @@
   </body>
 </html>
 ```
+
+![](../assets/html6_6.PNG)
+
 - 목록 태그는 내비게이션 메뉴를 만들 때 자주 사용된다.
 
 
@@ -98,6 +112,8 @@
 |tr	|표 내부의 행 (table row)|
 |th	|행 내부의 제목 셀 (table heading)|
 |td	|행 내부의 일반 셀 (table data)|
+
+![](../assets/html6_7.PNG)
 
 ```html
 <!DOCTYPE html>
@@ -128,6 +144,8 @@
   </body>
 </html>
 ```
+
+![](../assets/html6_8.PNG)
 
 - 테이블 태그의 어트리뷰트는 아래와 같다.
 
@@ -182,6 +200,8 @@
   </body>
 </html>
 ```
+
+![](../assets/html6_9.PNG)
 
 참고 : 
 
