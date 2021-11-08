@@ -1,9 +1,15 @@
 - CSS(Cascading Style Sheets)는 HTML이나 XML과 같은 구조화 된 문서를 화면,종이등에 어떻게 렌더링할 것인지를 정의하기 위한 언어이다.
 - 즉, CSS는 HTML의 각 요소의 style(design, layout etc)을 정의하여 화면등에 어떻게 렌더링하면 되는지
 브라우저에게 설명하기 위한 언어이다.
+
+![](../assets/css1_1.png)
+
 - HTML 5 이전 버전의 HTML에는 style을 컨트롤할 수 있는 태그가 존재하여 CSS가 없이도 어느 정도의 스타일 표현이 가능하였으나 정보롸 구조를
 담당하는 HTML의 본연의 역할과 동떨어진 기능까지 추가됨으로서 복잡하고 혼란스러운 언어가 되어 버렸다.
 - HTML5에서는 HTML는 정보와 구조화, CSS는 styling의 정의라는 본연의 임무에 충실한 명확한 구분이 이루어졌다.
+
+![](../assets/css1_2.png)
+
 - HTML과 CSS는 각자의 문법을 갖는 별개의 언어이며 HTML은 CSS를 포함할 수 있다.
 - 그러나 HTML없이 단독으로 존재하는 CSS는 의미가 없다.
 - 새로운 언어를 학습할 때에는 먼저 용어에 익숙해져야 할 필요가 있다. CSS3의 용어에 대해 알아보도록 하자.
@@ -12,6 +18,8 @@
 - CSS는 HTML요소의 style(design, layout etc)을 정의하는데 사용된다.
 - 이를 위해서 선행되어야하는 것은 스타일을 적용하고자 하는 HTML 요소를 선택할 수 있어야 한다.
 - 셀렉터는 스타일을 적용하고자 하는 HTML 요소를 선택하기위해 CSS에서 제공하는 수단이다.
+
+![](../assets/css1_3.png)
 
 - 위와 같은 구문을 Rule Set(또는 Rule)이라 하며 셀렉터에 의해 선택된 특정 GRML 요소를 어떻게 렌더링할 것인지 브라우저에 지시하는 역할을 한다.
 - 위의 CSS Rule set은 HTML 문서에 속해 있는 셀렉터를 통해 모든 h1요소를 선택한 후 선택된 h1요소의 스타일을 선언 블록에서 정의하고 있다.
@@ -90,6 +98,8 @@ p  { background: blue; }
 </html>
 ```
 
+![](../assets/css1_4.png)
+
 ### 4.3 Inline style
 - HTML요소의 style 프로퍼티에 CSS를 기술하는 방식이다. 
 - JavaScript가 동적으로 CSS를 생성할 때 사용하는 경우가 있다.
@@ -104,6 +114,8 @@ p  { background: blue; }
   </body>
 </html>
 ```
+
+![](../assets/css1_5.png)
 
 ## 5. Reset CSS 사용하기
 - 모든 웹 브라우저는 디폴트 스타일(브라우저가 내장하고 있는 기본 스타일)을 가지고 있어 CSS가 없어도 작동한다.
