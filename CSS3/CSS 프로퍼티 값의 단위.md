@@ -1,5 +1,7 @@
 - CSS 프로퍼티에는 키워드, 크기 단위, 색상 표현 단위 등의 특정 단위를 갖는 값을 지정한다.
 
+![](../assets/css3_1.png)
+
 ## 1. 키워드
 - 각 프로퍼티에 따라 사용할 수 있는 키워드가 존재한다.
 - 예를 들어 display 프로퍼티의 값으로 사용할 수 있는 키워드는 block, inline, inline, inline-block, none이 있다.
@@ -18,7 +20,11 @@ https://poiemaweb.com/css3-display#1-display-%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B
 - 22인치 LCD모니터의 경우 해상도가 1680 * 1050 인데 이것은 가로에 1680개의 픽셀, 세로에 1050개의 픽셀을 가진다는 의미이다.
 - 200만 화소(픽셀)의 디지털 카메라로 찍은 사진은 1600 * 1200 = 1,920,000으로 통상 200만 화소라 한다.
 
+![](../assets/css3_2.png)
+
 - 픽셀은 디바이스 해상도에 따라 상대적인 크기를 갖는다.
+
+![](../assets/css3_3.png)
 
 - 이와 같이 디바이스 별로 픽셀(화소)의 크기는 제각각이기 때문에 픽셀을 기준으로 하는 단위는 명확하지 않다. 
 - 따라서 대부분의 브라우저는 1px을 1/96인치의 절대 단위로 인식한다.
@@ -46,6 +52,8 @@ https://poiemaweb.com/css3-display#1-display-%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B
 </html>
 ```
 
+![](../assets/css3_4.PNG)
+
 ### 2.2 %
 - %는 백분률 단위의 상대 단위이다. 
 - 요소에 지정된 사이즈(상속된 사이즈나 디폴트 사이즈)에 상대적인 사이즈를 설정한다.
@@ -72,6 +80,8 @@ https://poiemaweb.com/css3-display#1-display-%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B
 </body>
 </html>
 ```
+
+![](../assets/css3_5.PNG)
 
 ### 2.3 em
 - em은 배수 단위로 상대단위이다. 
@@ -101,6 +111,8 @@ https://poiemaweb.com/css3-display#1-display-%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B
 </body>
 </html>
 ```
+
+![](../assets/css3_6.PNG)
 
 - 중첩된 자식 요소에 em을 지정하면 모든 자식 요소의 사이즈에 영향을 미치기 때문에 주의하여야 한다.
 
@@ -136,6 +148,8 @@ https://poiemaweb.com/css3-display#1-display-%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B
 </body>
 </html>
 ```
+
+![](../assets/css3_7.PNG)
 
 - 의도되지 않은 상황이라면 무척 난감한 상황일 수 있다. 즉, 상대 단위인 em의 기준이 상속의 영향으로 바뀔 수 있기 때문이다.
 
@@ -176,6 +190,8 @@ https://poiemaweb.com/css3-display#1-display-%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B
 </body>
 </html>
 ```
+
+![](../assets/css3_8.PNG)
 
 - 사용자가 브라우저의 기본 폰트 크기를 변경(Mac Chrome의 경우, 설정 > 고급 설정 표시 > 웹 콘텐츠 > 글꼴 맞춤 설정)하더라도 
 이에 따라 웹사이트의 레이아웃을 적절히 조정할 수 있다는 장점이 있다. 
@@ -233,6 +249,8 @@ https://poiemaweb.com/css3-display#1-display-%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B
 </html>
 ```
 
+![](../assets/css3_9.PNG)
+
 - IE 8 이하는 지원하지 않으며 IE 9~11, Edge는 지원이 완전하지 않으므로 주의가 필요하다.
 
 ## 3. 색상 표현 단위
@@ -273,6 +291,8 @@ https://poiemaweb.com/css3-display#1-display-%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B
   </body>
 </html>
 ```
+
+![](../assets/css3_10.PNG)
 
 - 더욱 다양한 색상을 표현하기 위해 다음과 같은 색상 표현 단위를 사용할 수 있다. HTML COLOR CODES를 참조하면 편리하다.
 
@@ -368,6 +388,9 @@ https://poiemaweb.com/css3-display#1-display-%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B
 </html>
 ```
 
+![](../assets/css3_11.PNG)
+![](../assets/css3_12.PNG)
+
 ### 3.1 Color keywords
 - google 검색 참조
 - https://poiemaweb.com/css3-units
@@ -379,9 +402,5 @@ https://poiemaweb.com/css3-units
 https://www.w3.org/TR/CSS/
 
 https://quirksmode.org/css/units-values/
-
-
-
-
 
 
