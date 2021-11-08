@@ -79,6 +79,8 @@ block 특성을 가지는 요소(block 레벨 요소 또는 block 요소)는 아
 </html>
 ```
 
+![](../assets/css5_1.PNG)
+
 ### 1.2 inline 레벨 요소
 inline 특성을 가지는 요소(inline 레벨 요소 또는 inline 요소)는 아래와 같은 특징을 갖는다.
 
@@ -137,6 +139,8 @@ inline 특성을 가지는 요소(inline 레벨 요소 또는 inline 요소)는 
 </html>
 ```
 
+![](../assets/css5_2.PNG)
+
 ### 1.3 inline-block 레벨 요소
 - block과 inline 레벨 요소의 특징을 모두 갖는다. 
 - inline 레벨 요소와 같이 한 줄에 표현되면서 width, height, margin 프로퍼티를 모두 지정할 수 있다.
@@ -187,6 +191,8 @@ inline 특성을 가지는 요소(inline 레벨 요소 또는 inline 요소)는 
 </html>
 ```
 
+![](../assets/css5_3.PNG)
+
 ## 2. visibility 프로퍼티
 - visibility 프로퍼티는 요소를 보이게 할 것인지 보이지 않게 할 것인지를 정의한다. 
 - 즉, 요소의 렌더링 여부를 결정한다.
@@ -230,6 +236,8 @@ inline 특성을 가지는 요소(inline 레벨 요소 또는 inline 요소)는 
 </html>
 ```
 
+![](../assets/css5_4.PNG)
+
 ## 3. opacity 프로퍼티
 - opacity 프로퍼티는 요소의 투명도를 정의한다. 
 - 0.0 ~ 1.0의 값을 입력하며 0.0은 투명, 1.0은 불투명을 의미한다.
@@ -260,6 +268,8 @@ inline 특성을 가지는 요소(inline 레벨 요소 또는 inline 요소)는 
 </body>
 </html>
 ```
+
+![](../assets/css5_5.PNG)
 
 참고 :
 
