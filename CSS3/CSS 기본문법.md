@@ -98,7 +98,7 @@ p  { background: blue; }
 </html>
 ```
 
-![](../assets/css1_4.png)
+![](../assets/css1_4.PNG)
 
 ### 4.3 Inline style
 - HTML요소의 style 프로퍼티에 CSS를 기술하는 방식이다. 
@@ -115,7 +115,7 @@ p  { background: blue; }
 </html>
 ```
 
-![](../assets/css1_5.png)
+![](../assets/css1_5.PNG)
 
 ## 5. Reset CSS 사용하기
 - 모든 웹 브라우저는 디폴트 스타일(브라우저가 내장하고 있는 기본 스타일)을 가지고 있어 CSS가 없어도 작동한다.
