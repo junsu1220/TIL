@@ -204,9 +204,12 @@
             <button class="subscribe">subscribe</button>
         </div>
     </section>
+
+    <!-- Video upNext -->
     <section class="upNext">
         <span class="title">Up next</span>
         <ul>
+            <!-- item1 -->
             <li class="item">
                 <img src="image/kt.png" alt="">
                 <div class="info">
@@ -219,6 +222,7 @@
                 </div>
                 <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
             </li>
+            <!-- item2 -->
             <li class="item">
                 <img src="image/sk.png" alt="">
                 <div class="info">
@@ -231,6 +235,7 @@
                 </div>
                 <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
             </li>
+            <!-- item3 -->
             <li class="item">
                 <img src="image/lg.png" alt="">
                 <div class="info">
@@ -245,7 +250,6 @@
             </li>
         </ul>
     </section>
-    
 
 </body>
 </html>
