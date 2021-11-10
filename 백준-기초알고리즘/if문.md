@@ -62,6 +62,7 @@ else{
 ## 14681 사분면 고르기
 - 출처 : https://www.acmicpc.net/problem/14681
 - 코드 : 
+```javascript
 const readline = require("readline");
 const rl = readline.createInterface({
   input: process.stdin,
@@ -92,6 +93,7 @@ else if(a > 0 && b < 0){
 //////////////////////////////
     process.exit();
 });
+```
 
 ## 2884 알람시계
 - 출처 : https://www.acmicpc.net/problem/2884
