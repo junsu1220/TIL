@@ -52,6 +52,16 @@ header {
 - `text-align: center;`를 하면 video도 가운데에 올 수 있게 한다.
 - `position: sticky;` 와 `top: 0;`을 하면 유튜브 처럼 위에 고정할 수 있다.
 
+### SASS & LESS
+- sass 와 less 라이브러리를 쓰면 css 작성 코드를 줄일 수 있다.
+- 헤더와 헤더내의 로고 그리고 i class를 바꿀때 일일이 헤더라고 쓰면 귀찮기 때문에 모아서 쓰는것이 sass와 less이다.
+
+### 팁
+- 이번에 해쉬태그를 고칠때처럼 무언가 고칠때는 클래스네임들을 다 적어서 확실하게 해두자
+- ex) .info .metadata .hashtags
+- CSS Background-color 투명 or 배경 없애기 background-color:transparent;
+
+
 
 
 ## 코드
@@ -86,6 +96,18 @@ body {
   font-family: Roboto;
 }
 
+ul { 
+  list-style: none;
+}
+
+button,
+button:focus {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color:transparent;
+}
+
 /* Header */
 header {
   display: flex;
@@ -118,5 +140,103 @@ header .icons .fa-search {
   width: 100%;
   height: 100%;
   max-width: 1000px;
+}
+
+.info {
+  padding: var(--padding);
+}
+
+.info .metadata .hashtags {
+  display: flex;
+  font-size: var(--font-small);
+  color: var(--blue-color);
+}
+
+.info .metadata .hashtags li {
+  margin-right: var(--padding);
+}
+
+.info .metadata .titleAndButton {
+  display: flex;
+}
+
+.info .metadata .titleAndButton .title {
+  font-size: var(--font-medium);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-right: var(--padding);
+}
+
+.info .metadata .titleAndButton .moreBtn {
+  height: 100%;
+}
+
+.info .views {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+
+/* Action Buttons */
+.actions {
+  display: flex;
+  justify-content: space-around;
+  margin: var(--padding) 0;
+}
+
+.actions button {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-small);
+  color: var(--grey-dark-color)
+}
+
+.actions button i {
+  margin: 0 auto;
+  margin-bottom: calc(var(--padding)/2);
+  font-size: 16px;
+}
+
+.actions button i.active {
+  color: var(--blue-color);
+}
+
+/* Channel Description */
+.channel {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--grey-light-color);
+  border-bottom: 1px solid var(--grey-light-color);
+}
+
+.channel .metadata {
+  display: flex;
+  align-items: center;
+}
+
+.channel .metadata .info {
+  display: flex;
+  flex-direction: column;
+}
+.channel .metadata img {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
+}
+
+.channel .metadata .info .name {
+  font-size: var(--font-medium);
+}
+
+.channel .metadata .info .subscribers {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+
+.channel .subscribe {
+  text-transform: uppercase;
+  color: var(--red-color);
+  font-size: var(--font-medium);
 }
 ```
