@@ -60,8 +60,13 @@ header {
 - 이번에 해쉬태그를 고칠때처럼 무언가 고칠때는 클래스네임들을 다 적어서 확실하게 해두자
 - ex) .info .metadata .hashtags
 - CSS Background-color 투명 or 배경 없애기 background-color:transparent;
+- 항상 안전하게 상위 태그나 상위 클래스네임을 꼭 적어서 확실하게 하자
+- `>` 자식노드 셀렉터를 이용하면 밑에 다른 중복되는 클래스네임이 있어도 바로 따라오는 클래스네임만 적용시킨다.
 
-
+### javascript
+- `<script src="main.js" defer></script>`코드를 head태그 내에 넣는다.
+- 이후 main.js를 만들어 사용자와의 상호작용 코드를 넣어주면 여러가지를 구현할 수 있다.
+- 다음에 자바스크립트를 배우면 실전으로 써보자.
 
 
 ## 코드
@@ -162,15 +167,23 @@ header .icons .fa-search {
 
 .info .metadata .titleAndButton .title {
   font-size: var(--font-medium);
+  margin-right: var(--padding);
+}
+
+.info .metadata .titleAndButton .title.clamp{
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
-  margin-right: var(--padding);
 }
 
 .info .metadata .titleAndButton .moreBtn {
   height: 100%;
+  transition: transform 300ms ease-in-out;
+}
+
+.info .metadata .titleAndButton .moreBtn.clicked {
+  transform: rotate(180deg);
 }
 
 .info .views {
@@ -179,26 +192,26 @@ header .icons .fa-search {
 }
 
 /* Action Buttons */
-.actions {
+.info .actions {
   display: flex;
   justify-content: space-around;
   margin: var(--padding) 0;
 }
 
-.actions button {
+.info .actions button {
   display: flex;
   flex-direction: column;
   font-size: var(--font-small);
   color: var(--grey-dark-color)
 }
 
-.actions button i {
+.info .actions button i {
   margin: 0 auto;
   margin-bottom: calc(var(--padding)/2);
   font-size: 16px;
 }
 
-.actions button i.active {
+.info .actions button i.active {
   color: var(--blue-color);
 }
 
@@ -238,5 +251,66 @@ header .icons .fa-search {
   text-transform: uppercase;
   color: var(--red-color);
   font-size: var(--font-medium);
+}
+
+/* Up Next */
+.upNext {
+  padding: 0 var(--padding);
+}
+
+.upNext > .title {
+  font-size: var(--font-medium);
+  color: var(--grey-dark-color);
+  margin-bottom: calc(var(--padding) / 2);
+}
+
+.upNext .item {
+  display: flex;
+  margin-top: var(--padding);
+}
+
+.upNext .item .img {
+  flex: 1 1 35%;
+  margin-right: var(--padding);
+}
+
+.upNext .item .img img{
+  width: 100%;
+}
+
+.upNext .item .info {
+  flex: 1 1 60%;
+}
+
+.upNext .item .moreBtn {
+  height: 100%;
+  flex: 1 1 5%;
+}
+
+.upNext .item .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.upNext .item .info .title {
+  font-size: var(--font-small);
+}
+
+.upNext .item .info .name, 
+.upNext .item .info .views {
+  font-size: var(--font-micro);
+  color: var(--grey-dark-color);
+}
+
+.infoAndUpNext {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px){
+  .infoAndUpNext {
+    flex-direction: row;
+    margin: var(--padding) 0;
+  }
 }
 ```
