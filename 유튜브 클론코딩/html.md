@@ -125,12 +125,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" 
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
     <title>Youtube Mobile</title>
     <script 
         src="https://kit.fontawesome.com/3dd9792e1f.js" 
         crossorigin="anonymous">
     </script>
+    <script src="main.js" defer></script>
 </head>
 <body>
     <!-- Header -->
@@ -149,7 +157,8 @@
     <section class="player">
         <video controls src="video/video.mp4"></video>
     </section>
-
+    <!-- infoAndUpNext -->
+    <div class="infoAndUpNext">
     <!-- Video info-->
     <section class="info">
         <!-- Metadata -->
@@ -160,22 +169,21 @@
                 <li>#Ellie</li>
             </ul>
             <div class="titleAndButton">
-                <span class="title">
+                <span class="title clamp">
                     클론코딩 유튜브 사이트 따라 만들기(HTML+CSS 연습편, 웹 포트폴리오) 
-                    | 프론트엔드 개발자 입문편: HTML, CSS, Javascript
+                    | 프론트엔드 개발자 입문편: HTML, CSS, Javascript asdasdasdasdasdasdas
+                    asdasdasdasdasdasdasd
                 </span>
                 <button class="moreBtn">
                     <i class="fas fa-caret-down"></i>
                 </button>
             </div>
-            <div class="views">
-                <span class="views">1M views 1 month ago</span>
-            </div>
+            <span class="views">1M views 1 month ago</span>
         </div>
         <!-- Actions -->
         <ul class="actions">
             <li>
-                <button><i class="fas fa-thumbs-up"></i><span>1K</span></button>
+                <button><i class="active fas fa-thumbs-up"></i><span>1K</span></button>
             </li>
             <li>
                 <button><i class="fas fa-thumbs-down"></i><span>0</span></button>
@@ -211,7 +219,7 @@
         <ul>
             <!-- item1 -->
             <li class="item">
-                <img src="image/kt.png" alt="">
+                <div class="img"><img src="image/1.png" alt=""></div>
                 <div class="info">
                     <span class="title">kt 사이트를 반응형으로 만들어 볼꺼예요. 
                         순수 HTML, CSS를 이용해서 (Javascript 약간) 만들어 보고, 
@@ -224,7 +232,7 @@
             </li>
             <!-- item2 -->
             <li class="item">
-                <img src="image/sk.png" alt="">
+                <div class="img"><img src="image/2.jpg" alt=""></div>
                 <div class="info">
                     <span class="title">sk 사이트를 반응형으로 만들어 볼꺼예요. 
                         순수 HTML, CSS를 이용해서 (Javascript 약간) 만들어 보고, 
@@ -237,7 +245,7 @@
             </li>
             <!-- item3 -->
             <li class="item">
-                <img src="image/lg.png" alt="">
+                <div class="img"><img src="image/3.jpg" alt=""></div>
                 <div class="info">
                     <span class="title">lg 사이트를 반응형으로 만들어 볼꺼예요. 
                         순수 HTML, CSS를 이용해서 (Javascript 약간) 만들어 보고, 
@@ -250,6 +258,8 @@
             </li>
         </ul>
     </section>
+    </div>
+
 
 </body>
 </html>
