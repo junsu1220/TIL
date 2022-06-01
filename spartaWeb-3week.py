@@ -6,10 +6,21 @@ data = requests.get('https://www.genie.co.kr/chart/top200?ditc=M&rtm=N&ymd=20210
 
 soup = BeautifulSoup(data.text, 'html.parser')
 
-trs = soup.select('#body-content > div.newest-list > div > table > tbody > tr')
+musics = soup.select('#body-content > div.newest-list > div > table > tbody > tr')
+#body-content > div.newest-list > div > table > tbody > tr:nth-child(1) > td.number
+#body-content > div.newest-list > div > table > tbody > tr:nth-child(1) > td.info > a.title.ellipsis
+#body-content > div.newest-list > div > table > tbody > tr:nth-child(1) > td.info > a.artist.ellipsis
 
-for tr in trs:
-    title = tr.select_one('td.info > a.title.ellipsis').text.strip()
-    rank = tr.select_one('td.number').text[0:2].strip()
-    artist = tr.select_one('td.info > a.artist.ellipsis').text
+for music in musics:
+    number = music.select_one('td.number')
+    a = music.select_one('td.info > a.title.ellipsis')
+    art = music.select_one('td.info > a.artist.ellipsis')
+
+    rank = number.text[0:2].strip()
+    title = a.text.strip()
+    artist = art.text.strip()
+
+    if("19금" in title):
+        print(title.replace("19금", "").strip())
+        continue
     print(rank, title, artist)
