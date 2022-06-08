@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <style>
+      /* 초기에는 기본적으로 display를 이용해 색깔별은 안보이게
+      빈별은 보이게 설정합니다. */
+      #solid {
+        display: none;
+      }
+      #regular {
+        display: inline;
+      }
+      /* 클릭될경우 script에 설정된 이벤트를 통해 
+      클래스에 show가 추가되어 아래 스타일을 적용하게 됩니다.
+      따라서 색깔 별은 보이게 됩니다. */
+      #solid.show {
+        display: inline;
+      }
+      /* 클릭될경우 script에 설정된 이벤트를 통해 
+      클래스에 hide가 추가되어 아래 스타일을 적용하게 됩니다.
+      따라서 속이 빈 별은 안보이게 됩니다. */
+      #regular.hide {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="dib">
+      <i id="solid" class="fa-solid fa-star"></i>
+      <i id="regular" class="fa-regular fa-star"></i>
+    </button>
+  </body>
+  <script>
+    btnEl = document.querySelector(".dib");
+    solidEl = document.getElementById("solid");
+    regularEl = document.getElementById("regular");
+    //토글을 위해 먼저 변수를 하나 지정해 줍니다.
+    let isEmpty = false;
+    //button에 자바스크립트를 통해 클릭 이벤트를 추가해줍니다.
+    btnEl.addEventListener("click", function () {
+      //토글 기능을 위해 위에서 만든 변수가 클릭할때마다
+      //변할 수 있게 설정해줍니다.
+      isEmpty = !isEmpty;
+      //초기에는 isEmpty가 true이므로 클릭시 색깔 별은 보이게 바꾸고
+      //빈 별은 안보이게 클래스를 추가 & 삭제해줍니다.
+      if (isEmpty) {
+        solidEl.classList.add("show");
+        regularEl.classList.add("hide");
+        //다시 클릭시에는 isEmpty값이 false이므로 위와 반대되는 코드를
+        //조건문 else를 이용해 설정해줍니다.
+      } else {
+        solidEl.classList.remove("show");
+        regularEl.classList.remove("hide");
+      }
+    });
+  </script>
+</html>
