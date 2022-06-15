@@ -10,7 +10,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
@@ -18,6 +18,7 @@
         * {
             font-family: 'Noto Sans KR', sans-serif;
         }
+
         .mytitle {
             width: 100%;
             max-width: 1000px;
@@ -35,29 +36,35 @@
 
             color: white;
         }
+
         #carouselExampleCaptions {
             width: 100%;
             max-width: 1000px;
             margin: auto;
             margin-top: 20px;
         }
+
         #carouselExampleCaptions .carousel-item img {
             opacity: 90%;
+            height: 550px;
         }
-        #carouselExampleCaptions .carousel-item .d-none h5{
+
+        #carouselExampleCaptions .carousel-item .d-none h5 {
             font-size: 30px;
             font-weight: 900;
             width: 100%;
             background-color: black;
             color: white;
         }
-        #carouselExampleCaptions .carousel-item .d-none p{
+
+        #carouselExampleCaptions .carousel-item .d-none p {
             font-size: 15px;
             font-weight: 900;
             width: 100%;
             background-color: black;
             color: white;
         }
+
         #carouselExampleCaptions button {
             background-color: black;
         }
@@ -68,21 +75,217 @@
             margin: auto;
             margin-top: 20px;
         }
+
         .mycards span {
-            margin-left: 150px;
+            margin-left: 15px;
+        }
+
+        .mycards .comment-box {
+            border: 2px #DDDDDD solid;
+            padding: 20px;
+            display: none;
+            margin-top: 10px;
+        }
+
+        .mycards .btn-box {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mycards .btn-box button {
+            margin: 15px;
+        }
+        .writing .writing-box-group{
+            display: flex;
+        }
+
+        .writing .comment-box2{
+            display: none;
+        }
+
+        .writing .comment-box3{
+            display: none;
+        }
+
+        .writing .btn{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            margin-bottom: 20px;
         }
 
     </style>
     <script>
-        // function open_comment(){
-        //     $()
-        // }
+        let isShow = false
+        let isShow2 = false
+        let isShow3 = false
+
+        function toggle_comment() {
+            isShow = !isShow
+            if (isShow) $('.comment-box').show()
+            else $('.comment-box').hide()
+        }
+
+        function toggle_comment2() {
+            isShow2 = !isShow2
+            if (isShow2) $('.comment-box2').show()
+            else $('.comment-box2').hide()
+        }
+
+        function toggle_comment3() {
+            isShow3 = !isShow3
+            if (isShow3) $('.comment-box3').show()
+            else $('.comment-box3').hide()
+        }
+
+
+        $(document).ready(function(){
+            $.ajax({
+                type: "GET",
+                url: "http://spartacodingclub.shop/sparta_api/weather/seoul",
+                data: {},
+                success: function (response){
+                    $('#city').text(response['city'])
+                    $('#temp').text(response['temp'])
+                    $('#temp_img').attr("src", response['icon'])
+                }
+            })
+            listing();
+        })
+
+        function listing() {
+            $.ajax({
+                type: 'GET',
+                url: '/cartoon',
+                data: {},
+                success: function (response) {
+                    let title_rows = response['titles']
+                    let sub_title_rows = response['sub_titles']
+                    let image_rows = response['images']
+
+                    for(let i=0;i<3;i++){
+                        let title_html = title_rows[i]
+                        let sub_title_html = sub_title_rows[i]
+                        let image_html = image_rows[i]
+                        let temp_html_carousel
+                        if(i === 0){
+                            temp_html_carousel = `<div class="carousel-item active">
+                                                    <img src=${image_html}
+                                                        class="d-block w-50 mx-auto" alt="...">
+                                                    <div class="carousel-caption d-none d-md-block">
+                                                        <h5>${title_html}</h5>
+                                                        <p>${sub_title_html}</p>
+                                                    </div>
+                                                </div>`
+                        } else {
+                            temp_html_carousel = `<div class="carousel-item">
+                                                    <img src=${image_html}
+                                                        class="d-block w-50 mx-auto" alt="...">
+                                                    <div class="carousel-caption d-none d-md-block">
+                                                        <h5>${title_html}</h5>
+                                                        <p>${sub_title_html}</p>
+                                                    </div>
+                                                </div>`
+                        }
+                        $('#carousel_crow').append(temp_html_carousel)
+                    }
+                }
+            })
+        }
+
+        function posting() {
+            $('#card_box').empty()
+            let url = $('#floatingTextarea3').val()
+            let card_num = $('#floatingTextarea5').val()
+            $.ajax({
+                type: 'POST',
+                url: '/cartoon',
+                data: {url_give: url, num_give: card_num},
+                success: function (response) {
+                    let rows = response['cartoons_post']
+                    for(let i = 0;i<rows.length;i++){
+                        let card_number = rows[i]['c_number']
+                        let card_image = rows[i]['c_image']
+                        let card_sub_title = rows[i]['c_sub_title']
+                        let card_title = rows[i]['c_title']
+
+                        let card_temp = `<div class="col">
+            <div class="card">
+                <img src=${card_image}
+                     class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">${card_title}</h5>
+                    <p class="card-text">${card_sub_title}</p>
+                    <button type="button" onclick="toggle_comment()" class="btn btn-outline-primary">코멘트</button>
+                    <button type="button" class="btn btn-outline-success">👍</button>
+                    <button type="button" class="btn btn-outline-danger">👎</button>
+                    <button type="button" class="btn btn-outline-info">${card_number}</button>
+                    <span>⭐⭐⭐⭐⭐</span>
+                    <div class="comment-box">
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here"
+                                      id="floatingTextarea1" style="height: 60px"></textarea>
+                            <label for="floatingTextarea1">닉네임</label>
+                        </div>
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here"
+                                      id="floatingTextarea2" style="height: 120px; margin-top: 15px"></textarea>
+                            <label for="floatingTextarea2">코멘트</label>
+                        </div>
+                        <div class="btn-box">
+                            <button type="button" class="btn btn-primary">기록하기</button>
+                            <button type="button" onclick="toggle_comment()" class="btn btn-secondary">닫기</button>
+                        </div>
+
+                        <div class="card card-small">
+                            <div class="card-body">
+                                <blockquote class="blockquote mb-0">
+                                    <p>얘네는 그래도 사람이라 같은 식탁에서 밥먹음</p>
+                                    <footer class="blockquote-footer">아이언맨</footer>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`
+
+                        $('#card_box').prepend(card_temp)
+                    }
+                }
+            });
+        }
+
+        function posting_del() {
+            let del_num = $('#floatingTextarea4').val()
+            $.ajax({
+                type: 'POST',
+                url: '/cartoon_delete',
+                data: {delete_give: del_num},
+                // success: function (response) {}
+            });
+        }
+
+
+
+
+
+
     </script>
 </head>
 <body>
 
 <div class="mytitle">
-    <h1>JS의 만화록</h1>
+    <h1><span class="abc">JS</span>의 만화록</h1>
+    <p>
+        도시 : <span id="city"></span> ,
+        현재 기온: <span id="temp"></span>도
+        <img id="temp_img" src="">
+    </p>
 </div>
 
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -95,29 +298,8 @@
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
                     aria-label="Slide 3"></button>
         </div>
-        <div class="carousel-item active">
-            <img src="https://thumbnail.laftel.net/items/full/2b4931d3-e682-4e56-89b9-5c515cd8191b.jpg?w=380&webp=1&c=13%2C0%2C1016%2C564"
-                 class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>해골기사님은 지금 이세계 모험 중</h5>
-                <p>해골기사님이 알고보니 정의의 기사</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="https://thumbnail.laftel.net/items/full/894f4e0c-4c8a-4ec2-83b9-d2c2234e5b23.jpg?w=380&webp=1&c=0%2C508%2C720%2C913"
-                 class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>명탐정 코난</h5>
-                <p>나이를 먹지 않는 그들, 평생 초등학생?!</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="https://thumbnail.laftel.net/items/full/d4a0d6ff-19ab-4d50-b5bc-c0fe0b0a9ee9.jpg?w=380&webp=1&c=0%2C19%2C800%2C469"
-                 class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>은혼</h5>
-                <p>나는 이런 연출에 너무 약하다!!</p>
-            </div>
+        <div id="carousel_crow">
+
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
                 data-bs-slide="prev">
@@ -132,80 +314,47 @@
     </div>
 </div>
 
+<div class="mycards">
 
-    <div class="mycards">
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-            <div class="col">
-                <div class="card">
-                    <img src="https://thumbnail.laftel.net/items/full/ed782413-1ecf-415e-bd69-1907bf762747.jpg?w=380&webp=1&c=6%2C483%2C1024%2C1056"
-                         class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">갓슈벨</h5>
-                        <p class="card-text">인형이 사람 대신 싸우는 포켓몬스터 인형버전</p>
-                        <button type="button" class="btn btn-outline-primary">코멘트</button>
-                        <button type="button" class="btn btn-outline-success">👍</button>
-                        <button type="button" class="btn btn-outline-danger">👎</button>
-                        <span>⭐⭐⭐⭐⭐</span>
-                        <div class="card">
-                            <div class="card-body">
-                                <blockquote class="blockquote mb-0">
-                                    <p>얘네는 사람이라 그래도 같은 식탁에서 밥먹음</p>
-                                    <footer class="blockquote-footer">아이언맨</footer>
-                                </blockquote>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="writing">
+        <div class="writing-box-group">
+            <button type="button" onclick="toggle_comment2()" class="btn btn-outline-success">만화 기록하기</button>
+            <button type="button" onclick="toggle_comment3()" class="btn btn-outline-danger">만화 삭제하기</button>
+        </div>
+
+        <div class="comment-box2">
+            <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here"
+                                      id="floatingTextarea3" style="height: 60px"></textarea>
+                <label for="floatingTextarea3">만화 URL</label>
             </div>
-            <div class="col">
-                <div class="card">
-                    <img src="https://thumbnail.laftel.net/items/full/ed782413-1ecf-415e-bd69-1907bf762747.jpg?w=380&webp=1&c=6%2C483%2C1024%2C1056"
-                         class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">갓슈벨</h5>
-                        <p class="card-text">인형이 사람 대신 싸우는 포켓몬스터 인형버전</p>
-                        <button type="button" class="btn btn-primary">코멘트</button>
-                        <button type="button" class="btn btn-outline-success">👍</button>
-                        <button type="button" class="btn btn-outline-danger">👎</button>
-                        <span>⭐⭐⭐⭐⭐</span>
-                    </div>
-                </div>
+            <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here"
+                                      id="floatingTextarea5" style="height: 60px"></textarea>
+                <label for="floatingTextarea5">만화 NUMBER</label>
             </div>
-            <div class="col">
-                <div class="card">
-                    <img src="https://thumbnail.laftel.net/items/full/385294e8-0b87-490b-898e-6dadfdfc8524.jpg?w=380&webp=1&c=0%2C371%2C750%2C793"
-                         class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">방패 용사 영웅담</h5>
-                        <p class="card-text">탱커 사실 필수인데...</p>
-                        <button type="button" class="btn btn-primary">코멘트</button>
-                    </div>
-                </div>
+            <div class="btn-box">
+                <button type="button" onclick="posting()" class="btn btn-success">기록하기</button>
+                <button type="button" onclick="toggle_comment2()" class="btn btn-secondary">닫기</button>
             </div>
-            <div class="col">
-                <div class="card">
-                    <img src="https://thumbnail.laftel.net/items/full/1d89068a-01d2-4985-ab28-3397337c17ff.jpg?w=380&webp=1&c=0%2C440%2C1024%2C1015"
-                         class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">여성향 게임 세계는 모브에게 가혹한 세계입니다</h5>
-                        <p class="card-text">제목이 무진장 긴~~~~~~~~~~~~만화</p>
-                        <button type="button" class="btn btn-primary">코멘트</button>
-                    </div>
-                </div>
+        </div>
+
+        <div class="comment-box3">
+            <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here"
+                                      id="floatingTextarea4" style="height: 60px"></textarea>
+                <label for="floatingTextarea3">만화 NUMBER</label>
             </div>
-            <div class="col">
-                <div class="card">
-                    <img src="https://thumbnail.laftel.net/items/full/1b15abe8-a59f-447a-aada-2130ee1182a1.jpg?w=380&webp=1&c=0%2C104%2C406%2C332"
-                         class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">슬램덩크</h5>
-                        <p class="card-text">예술작품, 살면서 한번은 봐야하는 만화</p>
-                        <button type="button" class="btn btn-primary">코멘트</button>
-                    </div>
-                </div>
+            <div class="btn-box">
+                <button type="button" onclick="posting_del()" class="btn btn-danger">삭제하기</button>
+                <button type="button" onclick="toggle_comment3()" class="btn btn-secondary">닫기</button>
             </div>
         </div>
     </div>
+
+    <div id="card_box" class="row row-cols-1 row-cols-md-2 g-4">
+    </div>
+</div>
 
 </body>
 </html>
