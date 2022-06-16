@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(k, arr) {
+        let answer;
+        let sum = 0;
+        let max = Number.MIN_SAFE_INTEGER;
+        for (let i = 0; i < arr.length - k; i++) {
+          for (let j = i; j < i + k; j++) {
+            sum += arr[j];
+          }
+          if (sum > max) max = sum;
+          sum = 0;
+        }
+        answer = max;
+        //첫번째 반복문은 0부터 arr.length의 -k 까지 반복한다.
+        //이때 하나의 반복마다 k까지의 범위를 다른 반복문이 더해주어
+        //sum에 합치고 max와 비교하여 최대값을 누적갱신 해 나아간다.
+        return answer;
+      }
+
+      let a = [12, 15, 11, 20, 25, 10, 20, 19, 13, 15];
+      console.log(solution(3, a));
+      /*강사님코드
+      function solution(k, arr) {
+        let answer,
+          sum = 0;
+        for (let i = 0; i < k; i++) sum += arr[i];
+        answer = sum;
+        for (let i = k; i < arr.length; i++) {
+          sum += arr[i] - arr[i - k];
+          answer = Math.max(answer, sum);
+        }
+        return answer;
+      }
+
+      let a = [12, 15, 11, 20, 25, 10, 20, 19, 13, 15];
+      console.log(solution(3, a));
+      /*
+    </script>
+  </body>
+</html>
