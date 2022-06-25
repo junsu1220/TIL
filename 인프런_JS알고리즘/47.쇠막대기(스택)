@@ -1,0 +1,87 @@
+📌강의 정리
+
+조건문을 잘 써야하는 문제이다. ()가 나온다면 10중8,9는 스택으로 풀리는 문제이다.
+
+“(”가 나오면 스택에 쌓아주고 “)”가 나온다면 바로 전의 것이 “(”이었는지 “)”였는지 확인해
+
+“(”였으면 스택을 pop하고 answer를 stack.length만큼 더해주고 “)”였다면 그냥 pop만 해준다.
+
+ 
+
+📌느낀점
+
+나는 이번에도 쉬운 문제를 굳이 어렵게 풀었다.
+
+그냥 answer를 조건마다 해줄게 아니고 stack의 길이만큼만 레이저가 왔을 때 딱딱 더해주면 되는건데.. 깊이가 부족했다.
+
+좀 더 깊게 생각해서 코드를 간결하게 표현할 수 있도록 하자.
+
+```jsx
+//나의코드
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer = 0;
+        let stack = [];
+        for (let i = 0; i < s.length; i++) {
+          if (s[i] === "(") {
+            stack.push("(");
+            answer++;
+          } else if (s[i] === ")") {
+            if (s[i - 1] === "(") {
+              stack.pop();
+              answer--;
+              answer += stack.length;
+            } else stack.pop();
+          }
+        }
+
+        return answer;
+      }
+      //연속해서 괄호가 나오면 레이저이고
+      //아니라면 쇠막대기이다.
+      //반복문을 돌리며 "("를 스택으로 쌓으며 answer를 cnt하되
+      //"(" 다음 바로 ")"가 나오면 스택의 길이만큼 answer를 cnt해주고
+      //")" 다음 바로 ")"가 나오면 스택을 하나 빼준다.
+      let a = "(((()(()()))(())()))(()())";
+      console.log(solution(a));
+    </script>
+  </body>
+</html>
+```
+
+```jsx
+//강사님 코드
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer = 0;
+        let stack = [];
+        for (let i = 0; i < s.length; i++) {
+          if (s[i] === "(") stack.push("(");
+          else {
+            stack.pop();
+            if (s[i - 1] === "(") answer += stack.length;
+            else answer++;
+            //stack.pop(); 이 위치에 하면 레이저까지 카운팅한다.
+          }
+        }
+        return answer;
+      }
+
+      let a = "()(((()())(())()))(())";
+      console.log(solution(a));
+    </script>
+  </body>
+</html>
+```
