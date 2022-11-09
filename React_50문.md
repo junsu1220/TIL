@@ -157,3 +157,11 @@ hello2(); // [출력] : Hello, 신우
 - 초기화된 전역 변수 및 static 변수를 data segment에 할당.
 - HEAP과 Stack은 초기 메모리 주소만 초기화됨.
 - PCB에 여러 정보가 기록되면 Ready Queue에서 CPU를 할당받기까지 대기한다.
+
+### HTTPS란
+
+- HTTP란 HyperText Transfer Protocol의 약자로써, 풀어서 설명하면 **하이퍼텍스트(HyperText)를 전송(Transfer)하기 위해 사용되는 통신 규약(Protocol)**
+이다.
+- 즉, 인터넷에서 HTML과 같은 문서를 사용자 컴퓨터에 설치된 웹 브라우저가 웹 서버에 요청할 때의 규칙이라고 할 수 있다.
+- HTTPS는 HTTP에서 데이터를 주고 받는 과정에 ‘보안’ 요소가 추가되었다는 것이 가장 큰 차이점이다.
+- HTTPS를 사용하면 **서버와 클라이언트 사이의 모든 통신 내용이 암호화**된다.
