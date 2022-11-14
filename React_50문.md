@@ -206,3 +206,29 @@ hello2(); // [출력] : Hello, 신우
 6. 서버가 요청을 처리하고 **응답**을 보낸다.
 7. 서버가 **HTTP 응답**을 보낸다.
 8. 브라우저가 **HTML** 컨텐츠를 보여준다.
+
+### JavaScript Event Loop
+
+- 브라우저는 Web APIs, Event Table, Callback Queue, Event Loop 등으로 구성됩니다.
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c885b831-6f88-4b3d-85cb-afda96d1707f/Untitled.png)
+
+- **Heap**: 메모리 할당이 발생하는 곳
+- **Call Stack** : 실행된 코드의 환경을 저장하는 자료구조, 함수 호출 시 Call Stack에 push 됩니다. (Call Stack에 대한 자세한 설명은 **[여기](https://medium.com/sjk5766/call-stack%EA%B3%BC-execution-context-%EB%A5%BC-%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90-3c877072db79)**)
+- **Web APIs**: DOM, AJAX, setTimeout 등 브라우저가 제공하는 API
+- **Callback Queue,** **Event Loop, Event Table**(그림엔 없음) 은 아래에서 설명하겠습니다.
+
+```jsx
+setTimeout(function exec() {
+  console.log('second')
+}, 1000);
+```
+
+- **Web APIs**: setTimeout이 Call Stack에 들어와 실행되면 Browser API인 timer를 호출합니다.
+- **Event Table**: 특정 event(timeout, click, mouse move 등등)가 발생했을 때 **`어떤 callback 함수가 호출되야 하는지`**를 알고 있는 자료구조입니다. 위 코드에서 호출된 timer가 종료되면 event가 발생하게 되는데 이때 **exec callback 함수가 실행되어야 한다는 것**을 **`Event Table`**이 알고 있습니다.
+- **Callback Queue**: ****이벤트 발생 시 실행해야 할 callback 함수가 **`Callback Queue`**에 추가됩니다.
+- **Event Loop**: ****Event Loop의 역할은 간단합니다.1. **`Call Stack`**과 **`Callback Queue`**를 감시합니다.2. Call Stack이 **`비어있을 경우`**, Callback queue에서 함수를 꺼내 Call Stack에 추가 합니다.
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/46833836-71e7-4445-aa3e-4914e30ff9e0/Untitled.png)
+
+[JavaScript 비동기 핵심 Event Loop 정리](https://medium.com/sjk5766/javascript-%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%95%B5%EC%8B%AC-event-loop-%EC%A0%95%EB%A6%AC-422eb29231a8)
