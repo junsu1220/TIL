@@ -228,3 +228,15 @@ setTimeout(function exec() {
 - **Event Loop**: ****Event Loop의 역할은 간단합니다.1. **`Call Stack`**과 **`Callback Queue`**를 감시합니다.2. Call Stack이 **`비어있을 경우`**, Callback queue에서 함수를 꺼내 Call Stack에 추가 합니다.
 
 [JavaScript 비동기 핵심 Event Loop 정리](https://medium.com/sjk5766/javascript-%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%95%B5%EC%8B%AC-event-loop-%EC%A0%95%EB%A6%AC-422eb29231a8)
+
+### RESTFul API란
+
+- HTTP URI(Uniform Resource Identifier)를 통해 자원(Resource)을 명시하고, HTTP Method(POST, GET, PUT, DELETE)를 통해 해당 자원에 대한 CRUD Operation을 적용하는 것을 의미한다.
+- 즉, REST는 자원 기반의 구조(ROA, Resource Oriented Architecture) 설계의 중심에 Resource가 있고 HTTP Method를 통해 Resource를 처리하도록 설계된 아키텍쳐를 의미한다.
+- 웹 사이트의 이미지, 텍스트, DB 내용 등의 모든 자원에 고유한 ID인 HTTP URI를 부여한다.
+CRUD Operation
+Create : 생성(POST)
+Read : 조회(GET)
+Update : 수정(PUT)
+Delete : 삭제(DELETE)
+HEAD: header 정보 조회(HEAD)
