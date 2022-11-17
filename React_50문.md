@@ -240,3 +240,9 @@ Read : 조회(GET)
 Update : 수정(PUT)
 Delete : 삭제(DELETE)
 HEAD: header 정보 조회(HEAD)
+
+### GET, POST 방식의 차이점
+
+- **사용목적** : GET은 서버의 리소스에서 데이터를 요청할 때, POST는 서버의 리소스를 새로 생성하거나 업데이트할 때 사용한다.
+- DB로 따지면 GET은 SELECT 에 가깝고, POST는 Create 에 가깝다고 보면 된다.
+- **요청에 body 유무** : GET 은 URL 파라미터에 요청하는 데이터를 담아 보내기 때문에 HTTP 메시지에 body가 없다. POST 는 body 에 데이터를 담아 보내기 때문에 당연히 HTTP 메시지에 body가 존재한다.
