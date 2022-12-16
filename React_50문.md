@@ -363,3 +363,41 @@ HEAD: header 정보 조회(HEAD)
 - 컴파일러와 트랜스파일러에 대해 설명하자면,
     - **컴파일러** 의 경우에는 한 언어도 작성된 코드를 다른 언어로 변환하는 것으로 C 코드로 개발된 코드를 Assembly 코드로 변환하는 것과 같고
     - **트랜스파일러** 란 한 언어로 작성된 소스 코드를 비슷한 수준의 추상화를 가진 언어로 변환하는 것을 의미합니다.
+
+### ES6에 추가된 것은 무엇인가?
+
+- **String Literal**
+    - ES6의 String Literal을 활용하면 문자열을 좀 더 직관적으로 결합할 수 있다.
+- **객체 비구조화 ( Object Destructuring )**
+    - 객체에 들어있는 값들 각각을 꺼내 쓸 수 있다.
+- **객체 리터럴 ( Object Literal )**
+    - ES6에선 객체 프로퍼티 이름이 로컬 변수 이름과 같으면 콜론과 값 없이 작성해도 된다.
+    - 값을 직접 명시해주는 경우와 함께 사용할 수도 있다
+- **for .. of**
+    - for.. of는 이런 아쉬움을 덜어내 줄 수 있도록 ES6에 추가된 효율적인 반복문이다
+- **Spread Operator**
+    - 배열이나 객체, 문자열을 ...과 함께 사용하면 배열, 객체, 문자열을 결합하기가 매우 수월해졌습니다.
+- **Rest Parameter**
+    - ... 을 함수의 인자에 사용하면 인자를 배열로 받을 수 있다
+- **Arrow Function**
+    - Arrow Function을 활용하면 함수 표현을 기존의 function 표현보다 짧은 구문으로 표현할 수 있다.
+- **Default Params**
+    - es6에선 함수의 기본 파라미터를 세팅해줄 수 있다.
+- **includes**
+    - es5에서 배열에 특정 값이 있는지 알고싶으면 indexOf를 활용해 -1 값이 있는지를 봐야했다.
+    - es6에선 includes를 활용하면 배열에 특정값이 있는지를 깔끔하게 확인할 수 있다.
+- **let & const**
+    - es5에선 변수를 var로만 선언할 수 있었다. 그러나 es6에서 let과 const가 추가되었다.
+    - let과 const를 활용하면 예상하지 못한 오류가 발생하는 걸 막을 수 있다. 이를 사용하길 권장한다.
+- **import & export**
+    - import와 export를 활용하면 다른 파일에서 사용한 원시값, 객체, 배열, 함수 등을 가져와서 쓸 수 있다.
+- **Classes**
+    - es5에서 어떤 함수를 Class처럼 쓰려면 함수를 Class처럼 만들고 prototype을 활용해야 했지만
+    - es6부터는 객체지향형 프로그래밍 언어들이 지원하던 Class를 javascript에서도 사용할 수 있게 되었다.
+- **Trailing Commas**
+    - es6부터는 trailing comma를 지원하기 때문에 객체나 배열의 마지막 값 뒤에 ,을 붙여도 된다
+    - ( trailing comma는 데이터가 늘어날 경우를 대비해서 사용한다 )
+- **Map & Set**
+    - es6부터는 javascript에서도 Map과 Set을 지원한다
+- **Async & Await**
+    - es6에선 Async와 Await를 활용해서, promise then을 쓸 때 보다 좀 더 세련되게 callback 지옥을 벗어날 수 있다.
