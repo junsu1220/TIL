@@ -401,3 +401,9 @@ HEAD: header 정보 조회(HEAD)
     - es6부터는 javascript에서도 Map과 Set을 지원한다
 - **Async & Await**
     - es6에선 Async와 Await를 활용해서, promise then을 쓸 때 보다 좀 더 세련되게 callback 지옥을 벗어날 수 있다.
+
+### Context API란?
+
+- Context API는 리액트에 내장된 기능으로 **Props**를 사용하지 않아도 특정 값이 필요한 컴포넌트끼리 쉽게 값을 공유할 수 있게 해 준다.
+- 주로 프로젝트에서 전역 상태를 관리할 때 많이 사용한다.
+- 리덕스에서의 강력한 미들웨어 기능은 없다.
